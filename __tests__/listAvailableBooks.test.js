@@ -4,10 +4,12 @@ const { Book } = require('../dist/Book');
 describe('Library Management System', () => {
     let library;
 
+    //beforeEach
     beforeEach(() => {
         library = new Library();
     });
 
+    //Assertion Made
     test('should list available books', () => {
         const book1 = new Book('123', 'Test Book 1', 'Author', 2022);
         const book2 = new Book('456', 'Test Book 2', 'Author', 2021);

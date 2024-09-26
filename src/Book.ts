@@ -1,3 +1,4 @@
+//Structure of Book
 export class Book {
     constructor(
         public isbn: string,
