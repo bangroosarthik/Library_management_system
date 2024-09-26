@@ -43,3 +43,45 @@ function returnBook() {
         console.log(error.message);
     }
 }
+
+
+function viewAvailableBooks() {
+    const books = library.viewAvailableBooks();
+    if (books.length === 0) {
+        console.log('No books available.');
+    } else {
+        console.log('\nAvailable Books:');
+        books.forEach(book => {
+            console.log(`${book.title} by ${book.author} (ISBN: ${book.isbn})`);
+        });
+    }
+}
+
+function main() {
+    while (true) {
+        showMenu();
+        const choice = readline.question('Enter your choice: ');
+
+        switch (choice) {
+            case '1':
+                addBook();
+                break;
+            case '2':
+                borrowBook();
+                break;
+            case '3':
+                returnBook();
+                break;
+            case '4':
+                viewAvailableBooks();
+                break;
+            case '5':
+                console.log('Exiting...');
+                process.exit();
+            default:
+                console.log('Invalid choice, please try again.');
+        }
+    }
+}
+
+main();
