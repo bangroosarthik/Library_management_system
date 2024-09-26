@@ -24,3 +24,22 @@ function addBook() {
     console.log('Book added successfully.');
 }
 
+function borrowBook() {
+    const isbn = readline.question('Enter ISBN of the book to borrow: ');
+    try {
+        library.borrowBook(isbn);
+        console.log('Book borrowed successfully.');
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+function returnBook() {
+    const isbn = readline.question('Enter ISBN of the book to return: ');
+    try {
+        library.returnBook(isbn);
+        console.log('Book returned successfully.');
+    } catch (error) {
+        console.log(error.message);
+    }
+}
